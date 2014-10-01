@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		660ECDBE19DA8E8C00A3D0DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660ECDBD19DA8E8C00A3D0DD /* Cocoa.framework */; };
+		660ECDC819DA8E8C00A3D0DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 660ECDC619DA8E8C00A3D0DD /* InfoPlist.strings */; };
+		660ECDCA19DA8E8C00A3D0DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 660ECDC919DA8E8C00A3D0DD /* main.m */; };
+		660ECDCE19DA8E8C00A3D0DD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 660ECDCC19DA8E8C00A3D0DD /* Credits.rtf */; };
+		660ECDD119DA8E8C00A3D0DD /* ORGDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 660ECDD019DA8E8C00A3D0DD /* ORGDocument.m */; };
+		660ECDD419DA8E8C00A3D0DD /* ORGDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660ECDD219DA8E8C00A3D0DD /* ORGDocument.xib */; };
+		660ECDD719DA8E8C00A3D0DD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660ECDD519DA8E8C00A3D0DD /* MainMenu.xib */; };
+		660ECDD919DA8E8C00A3D0DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660ECDD819DA8E8C00A3D0DD /* Images.xcassets */; };
+		660ECDE019DA8E8C00A3D0DD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660ECDDF19DA8E8C00A3D0DD /* XCTest.framework */; };
+		660ECDE119DA8E8C00A3D0DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660ECDBD19DA8E8C00A3D0DD /* Cocoa.framework */; };
+		660ECDE919DA8E8C00A3D0DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 660ECDE719DA8E8C00A3D0DD /* InfoPlist.strings */; };
+		660ECDEB19DA8E8C00A3D0DD /* PdfOrganiserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 660ECDEA19DA8E8C00A3D0DD /* PdfOrganiserTests.m */; };
+		660ECDF619DA8F9000A3D0DD /* PdfFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 660ECDF519DA8F9000A3D0DD /* PdfFile.m */; };
+		660ECDF819DA929E00A3D0DD /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660ECDF719DA929E00A3D0DD /* Quartz.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		660ECDE219DA8E8C00A3D0DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 660ECDB219DA8E8C00A3D0DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 660ECDB919DA8E8C00A3D0DD;
+			remoteInfo = PdfOrganiser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		660ECDBA19DA8E8C00A3D0DD /* PdfOrganiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PdfOrganiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		660ECDBD19DA8E8C00A3D0DD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		660ECDC019DA8E8C00A3D0DD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		660ECDC119DA8E8C00A3D0DD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		660ECDC219DA8E8C00A3D0DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		660ECDC519DA8E8C00A3D0DD /* PdfOrganiser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PdfOrganiser-Info.plist"; sourceTree = "<group>"; };
+		660ECDC719DA8E8C00A3D0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		660ECDC919DA8E8C00A3D0DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		660ECDCB19DA8E8C00A3D0DD /* PdfOrganiser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PdfOrganiser-Prefix.pch"; sourceTree = "<group>"; };
+		660ECDCD19DA8E8C00A3D0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		660ECDCF19DA8E8C00A3D0DD /* ORGDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORGDocument.h; sourceTree = "<group>"; };
+		660ECDD019DA8E8C00A3D0DD /* ORGDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORGDocument.m; sourceTree = "<group>"; };
+		660ECDD319DA8E8C00A3D0DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ORGDocument.xib; sourceTree = "<group>"; };
+		660ECDD619DA8E8C00A3D0DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		660ECDD819DA8E8C00A3D0DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		660ECDDE19DA8E8C00A3D0DD /* PdfOrganiserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PdfOrganiserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		660ECDDF19DA8E8C00A3D0DD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		660ECDE619DA8E8C00A3D0DD /* PdfOrganiserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PdfOrganiserTests-Info.plist"; sourceTree = "<group>"; };
+		660ECDE819DA8E8C00A3D0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		660ECDEA19DA8E8C00A3D0DD /* PdfOrganiserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PdfOrganiserTests.m; sourceTree = "<group>"; };
+		660ECDF419DA8F9000A3D0DD /* PdfFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfFile.h; sourceTree = "<group>"; };
+		660ECDF519DA8F9000A3D0DD /* PdfFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfFile.m; sourceTree = "<group>"; };
+		660ECDF719DA929E00A3D0DD /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		660ECDB719DA8E8C00A3D0DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660ECDF819DA929E00A3D0DD /* Quartz.framework in Frameworks */,
+				660ECDBE19DA8E8C00A3D0DD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660ECDDB19DA8E8C00A3D0DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660ECDE119DA8E8C00A3D0DD /* Cocoa.framework in Frameworks */,
+				660ECDE019DA8E8C00A3D0DD /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		660ECDB119DA8E8C00A3D0DD = {
+			isa = PBXGroup;
+			children = (
+				660ECDC319DA8E8C00A3D0DD /* PdfOrganiser */,
+				660ECDE419DA8E8C00A3D0DD /* PdfOrganiserTests */,
+				660ECDBC19DA8E8C00A3D0DD /* Frameworks */,
+				660ECDBB19DA8E8C00A3D0DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		660ECDBB19DA8E8C00A3D0DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				660ECDBA19DA8E8C00A3D0DD /* PdfOrganiser.app */,
+				660ECDDE19DA8E8C00A3D0DD /* PdfOrganiserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		660ECDBC19DA8E8C00A3D0DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				660ECDF719DA929E00A3D0DD /* Quartz.framework */,
+				660ECDBD19DA8E8C00A3D0DD /* Cocoa.framework */,
+				660ECDDF19DA8E8C00A3D0DD /* XCTest.framework */,
+				660ECDBF19DA8E8C00A3D0DD /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		660ECDBF19DA8E8C00A3D0DD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				660ECDC019DA8E8C00A3D0DD /* AppKit.framework */,
+				660ECDC119DA8E8C00A3D0DD /* CoreData.framework */,
+				660ECDC219DA8E8C00A3D0DD /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		660ECDC319DA8E8C00A3D0DD /* PdfOrganiser */ = {
+			isa = PBXGroup;
+			children = (
+				660ECDF419DA8F9000A3D0DD /* PdfFile.h */,
+				660ECDF519DA8F9000A3D0DD /* PdfFile.m */,
+				660ECDCF19DA8E8C00A3D0DD /* ORGDocument.h */,
+				660ECDD019DA8E8C00A3D0DD /* ORGDocument.m */,
+				660ECDD219DA8E8C00A3D0DD /* ORGDocument.xib */,
+				660ECDD519DA8E8C00A3D0DD /* MainMenu.xib */,
+				660ECDD819DA8E8C00A3D0DD /* Images.xcassets */,
+				660ECDC419DA8E8C00A3D0DD /* Supporting Files */,
+			);
+			path = PdfOrganiser;
+			sourceTree = "<group>";
+		};
+		660ECDC419DA8E8C00A3D0DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				660ECDC519DA8E8C00A3D0DD /* PdfOrganiser-Info.plist */,
+				660ECDC619DA8E8C00A3D0DD /* InfoPlist.strings */,
+				660ECDC919DA8E8C00A3D0DD /* main.m */,
+				660ECDCB19DA8E8C00A3D0DD /* PdfOrganiser-Prefix.pch */,
+				660ECDCC19DA8E8C00A3D0DD /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		660ECDE419DA8E8C00A3D0DD /* PdfOrganiserTests */ = {
+			isa = PBXGroup;
+			children = (
+				660ECDEA19DA8E8C00A3D0DD /* PdfOrganiserTests.m */,
+				660ECDE519DA8E8C00A3D0DD /* Supporting Files */,
+			);
+			path = PdfOrganiserTests;
+			sourceTree = "<group>";
+		};
+		660ECDE519DA8E8C00A3D0DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				660ECDE619DA8E8C00A3D0DD /* PdfOrganiserTests-Info.plist */,
+				660ECDE719DA8E8C00A3D0DD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		660ECDB919DA8E8C00A3D0DD /* PdfOrganiser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660ECDEE19DA8E8C00A3D0DD /* Build configuration list for PBXNativeTarget "PdfOrganiser" */;
+			buildPhases = (
+				660ECDB619DA8E8C00A3D0DD /* Sources */,
+				660ECDB719DA8E8C00A3D0DD /* Frameworks */,
+				660ECDB819DA8E8C00A3D0DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PdfOrganiser;
+			productName = PdfOrganiser;
+			productReference = 660ECDBA19DA8E8C00A3D0DD /* PdfOrganiser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		660ECDDD19DA8E8C00A3D0DD /* PdfOrganiserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660ECDF119DA8E8C00A3D0DD /* Build configuration list for PBXNativeTarget "PdfOrganiserTests" */;
+			buildPhases = (
+				660ECDDA19DA8E8C00A3D0DD /* Sources */,
+				660ECDDB19DA8E8C00A3D0DD /* Frameworks */,
+				660ECDDC19DA8E8C00A3D0DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				660ECDE319DA8E8C00A3D0DD /* PBXTargetDependency */,
+			);
+			name = PdfOrganiserTests;
+			productName = PdfOrganiserTests;
+			productReference = 660ECDDE19DA8E8C00A3D0DD /* PdfOrganiserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		660ECDB219DA8E8C00A3D0DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ORG;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Adam Sherlaw";
+				TargetAttributes = {
+					660ECDDD19DA8E8C00A3D0DD = {
+						TestTargetID = 660ECDB919DA8E8C00A3D0DD;
+					};
+				};
+			};
+			buildConfigurationList = 660ECDB519DA8E8C00A3D0DD /* Build configuration list for PBXProject "PdfOrganiser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 660ECDB119DA8E8C00A3D0DD;
+			productRefGroup = 660ECDBB19DA8E8C00A3D0DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				660ECDB919DA8E8C00A3D0DD /* PdfOrganiser */,
+				660ECDDD19DA8E8C00A3D0DD /* PdfOrganiserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		660ECDB819DA8E8C00A3D0DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660ECDD419DA8E8C00A3D0DD /* ORGDocument.xib in Resources */,
+				660ECDD919DA8E8C00A3D0DD /* Images.xcassets in Resources */,
+				660ECDC819DA8E8C00A3D0DD /* InfoPlist.strings in Resources */,
+				660ECDCE19DA8E8C00A3D0DD /* Credits.rtf in Resources */,
+				660ECDD719DA8E8C00A3D0DD /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660ECDDC19DA8E8C00A3D0DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660ECDE919DA8E8C00A3D0DD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		660ECDB619DA8E8C00A3D0DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660ECDF619DA8F9000A3D0DD /* PdfFile.m in Sources */,
+				660ECDCA19DA8E8C00A3D0DD /* main.m in Sources */,
+				660ECDD119DA8E8C00A3D0DD /* ORGDocument.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660ECDDA19DA8E8C00A3D0DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660ECDEB19DA8E8C00A3D0DD /* PdfOrganiserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		660ECDE319DA8E8C00A3D0DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 660ECDB919DA8E8C00A3D0DD /* PdfOrganiser */;
+			targetProxy = 660ECDE219DA8E8C00A3D0DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		660ECDC619DA8E8C00A3D0DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660ECDC719DA8E8C00A3D0DD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		660ECDCC19DA8E8C00A3D0DD /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660ECDCD19DA8E8C00A3D0DD /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		660ECDD219DA8E8C00A3D0DD /* ORGDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660ECDD319DA8E8C00A3D0DD /* Base */,
+			);
+			name = ORGDocument.xib;
+			sourceTree = "<group>";
+		};
+		660ECDD519DA8E8C00A3D0DD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660ECDD619DA8E8C00A3D0DD /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		660ECDE719DA8E8C00A3D0DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660ECDE819DA8E8C00A3D0DD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		660ECDEC19DA8E8C00A3D0DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		660ECDED19DA8E8C00A3D0DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		660ECDEF19DA8E8C00A3D0DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PdfOrganiser/PdfOrganiser-Prefix.pch";
+				INFOPLIST_FILE = "PdfOrganiser/PdfOrganiser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		660ECDF019DA8E8C00A3D0DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PdfOrganiser/PdfOrganiser-Prefix.pch";
+				INFOPLIST_FILE = "PdfOrganiser/PdfOrganiser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		660ECDF219DA8E8C00A3D0DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PdfOrganiser.app/Contents/MacOS/PdfOrganiser";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PdfOrganiser/PdfOrganiser-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PdfOrganiserTests/PdfOrganiserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		660ECDF319DA8E8C00A3D0DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PdfOrganiser.app/Contents/MacOS/PdfOrganiser";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PdfOrganiser/PdfOrganiser-Prefix.pch";
+				INFOPLIST_FILE = "PdfOrganiserTests/PdfOrganiserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		660ECDB519DA8E8C00A3D0DD /* Build configuration list for PBXProject "PdfOrganiser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660ECDEC19DA8E8C00A3D0DD /* Debug */,
+				660ECDED19DA8E8C00A3D0DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660ECDEE19DA8E8C00A3D0DD /* Build configuration list for PBXNativeTarget "PdfOrganiser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660ECDEF19DA8E8C00A3D0DD /* Debug */,
+				660ECDF019DA8E8C00A3D0DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660ECDF119DA8E8C00A3D0DD /* Build configuration list for PBXNativeTarget "PdfOrganiserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660ECDF219DA8E8C00A3D0DD /* Debug */,
+				660ECDF319DA8E8C00A3D0DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 660ECDB219DA8E8C00A3D0DD /* Project object */;
+}

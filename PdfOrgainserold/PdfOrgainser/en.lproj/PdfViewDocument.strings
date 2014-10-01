@@ -1,0 +1,45 @@
+
+/* Class = "NSButtonCell"; title = "Next Document"; ObjectID = "41E-9q-H1b"; */
+"41E-9q-H1b.title" = "Next Document";
+
+/* Class = "NSWindow"; title = "Set View"; ObjectID = "6AO-bP-kW4"; */
+"6AO-bP-kW4.title" = "Set View";
+
+/* Class = "NSButtonCell"; title = "Previous Document"; ObjectID = "715-JI-Ijt"; */
+"715-JI-Ijt.title" = "Previous Document";
+
+/* Class = "NSButtonCell"; title = "In"; ObjectID = "M5Y-GT-ECL"; */
+"M5Y-GT-ECL.title" = "In";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "MoI-4a-X22"; */
+"MoI-4a-X22.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Go to:"; ObjectID = "NZg-LE-nKJ"; */
+"NZg-LE-nKJ.title" = "Go to:";
+
+/* Class = "NSButtonCell"; title = "Add PDF"; ObjectID = "Qpo-44-N8I"; */
+"Qpo-44-N8I.title" = "Add PDF";
+
+/* Class = "NSTextFieldCell"; title = "Search"; ObjectID = "R4I-ki-sCp"; */
+"R4I-ki-sCp.title" = "Search";
+
+/* Class = "NSTableColumn"; headerCell.title = "Set Contents"; ObjectID = "Wr2-eq-ATy"; */
+"Wr2-eq-ATy.headerCell.title" = "Set Contents";
+
+/* Class = "NSTextFieldCell"; title = "PDF File Name Here"; ObjectID = "XFB-83-ihZ"; */
+"XFB-83-ihZ.title" = "PDF File Name Here";
+
+/* Class = "NSButtonCell"; title = "Next"; ObjectID = "aGs-Yp-jBB"; */
+"aGs-Yp-jBB.title" = "Next";
+
+/* Class = "NSButtonCell"; title = "Previous"; ObjectID = "lPL-rJ-IvF"; */
+"lPL-rJ-IvF.title" = "Previous";
+
+/* Class = "NSButtonCell"; title = "Fit to Screen"; ObjectID = "oUh-IL-2o6"; */
+"oUh-IL-2o6.title" = "Fit to Screen";
+
+/* Class = "NSButtonCell"; title = "View Set"; ObjectID = "xg6-o7-X1e"; */
+"xg6-o7-X1e.title" = "View Set";
+
+/* Class = "NSButtonCell"; title = "Out"; ObjectID = "zoh-lj-Ajt"; */
+"zoh-lj-Ajt.title" = "Out";

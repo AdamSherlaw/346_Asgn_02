@@ -13,6 +13,5 @@
 
 @property (weak) IBOutlet PDFView *pdfView;
 
-//-(IBAction)changeDoc:(id)sender;
 
 @end

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <plugIn identifier="com.apple.pdfkit.ibplugin" version="5056"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ORGDocument">
+            <connections>
+                <outlet property="cell" destination="kDc-E7-621" id="T6d-kb-UpK"/>
+                <outlet property="fileNameLabel" destination="JvU-WH-GfW" id="Znc-Ks-spW"/>
+                <outlet property="pdfView" destination="iav-Vx-z3h" id="bIT-su-1Mf"/>
+                <outlet property="setController" destination="f8q-ds-tJc" id="hqq-XM-WJj"/>
+                <outlet property="setView" destination="49e-1e-QLn" id="sgV-bc-mEs"/>
+                <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <arrayController objectClassName="PdfFile" id="f8q-ds-tJc">
+            <declaredKeys>
+                <string>documentName</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="pdfSet" id="1i8-P0-6ZK"/>
+            </connections>
+        </arrayController>
+        <window title="PDF Set Manager" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="332" y="68" width="1055" height="922"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+            <value key="minSize" type="size" width="500" height="300"/>
+            <view key="contentView" id="gIp-Ho-8D9">
+                <rect key="frame" x="0.0" y="0.0" width="1055" height="922"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <splitView dividerStyle="paneSplitter" vertical="YES" id="gke-Jv-JrT">
+                        <rect key="frame" x="0.0" y="-1" width="1055" height="923"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <customView id="1Pv-pD-X51" userLabel="setView">
+                                <rect key="frame" x="0.0" y="0.0" width="267" height="923"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" id="71D-aZ-Of4">
+                                        <rect key="frame" x="14" y="13" width="94" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Add PDF" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kBq-cF-RKt">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="addPdf:" target="-2" id="XRY-S8-0y5"/>
+                                        </connections>
+                                    </button>
+                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="C8H-XE-85w">
+                                        <rect key="frame" x="20" y="68" width="227" height="835"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <clipView key="contentView" copiesOnScroll="NO" id="70J-We-ebC">
+                                            <rect key="frame" x="1" y="17" width="225" height="817"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="bjJ-4H-g5B" id="49e-1e-QLn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="225" height="817"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <size key="intercellSpacing" width="3" height="2"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                    <tableColumns>
+                                                        <tableColumn editable="NO" width="221.5" minWidth="40" maxWidth="1000" id="6La-dN-O8r">
+                                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Set Contents">
+                                                                <font key="font" metaFont="smallSystem"/>
+                                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </tableHeaderCell>
+                                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="EIj-cB-uZR">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <sortDescriptor key="sortDescriptorPrototype" selector="caseInsensitiveCompare:" sortKey="documentName"/>
+                                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                            <connections>
+                                                                <binding destination="f8q-ds-tJc" name="value" keyPath="arrangedObjects.documentName" id="bZf-dF-J8x">
+                                                                    <dictionary key="options">
+                                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
+                                                        </tableColumn>
+                                                    </tableColumns>
+                                                </tableView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Toc-CU-7Ca">
+                                            <rect key="frame" x="1" y="1" width="0.0" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="cHD-Io-y56">
+                                            <rect key="frame" x="-15" y="17" width="16" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <tableHeaderView key="headerView" id="bjJ-4H-g5B">
+                                            <rect key="frame" x="0.0" y="0.0" width="225" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableHeaderView>
+                                    </scrollView>
+                                </subviews>
+                            </customView>
+                            <customView id="aoe-O0-emz" userLabel="pdfView">
+                                <rect key="frame" x="277" y="0.0" width="778" height="923"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Veq-Wc-F4w">
+                                        <rect key="frame" x="677" y="20" width="43" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Go to:" id="1gQ-2U-Gej">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" id="Kys-p9-r0p">
+                                        <rect key="frame" x="726" y="19" width="32" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Aq5-6e-5oe">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" id="upf-WX-Bm1">
+                                        <rect key="frame" x="556" y="10" width="121" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="push" title="--->" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B92-WM-apk">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="nextPage:" target="-2" id="GVe-Qr-aVC"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" id="8Ri-kU-Bwf">
+                                        <rect key="frame" x="434" y="10" width="122" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="push" title="&lt;---" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ULy-Zh-0gn">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="previousPage:" target="-2" id="R5K-Hv-NIq"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="JvU-WH-GfW">
+                                        <rect key="frame" x="18" y="21" width="172" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="PDF File Name Here" id="kDc-E7-621">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <pdfView autoresizesSubviews="NO" wantsLayer="YES" id="iav-Vx-z3h">
+                                        <rect key="frame" x="20" y="69" width="738" height="834"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </pdfView>
+                                </subviews>
+                            </customView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="98723AB9-0AB8-4672-9388-FB2B9B1EAB5A" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="As5-WW-Wbs">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="EED2ADFB-B1F3-49D2-9E91-24D14DFBAFCA" label="Zoom In" paletteLabel="Zoom In" tag="-1" image="NSAddTemplate" id="eyf-ea-gfW">
+                        <connections>
+                            <action selector="zoomIn:" target="-2" id="yiA-dA-Sng"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="18E713AF-B702-4E86-B45F-A1B3BFE784AD" label="Zoom Out" paletteLabel="Zoom Out" tag="-1" image="NSAddTemplate" id="vvM-fw-G3i">
+                        <connections>
+                            <action selector="zoomOut:" target="-2" id="0Gj-kG-iCs"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="84C6FCF8-453A-448C-B7D2-F7E8F68D27F9" label="Zoom to Fit" paletteLabel="Zoom to Fit" tag="-1" image="NSBluetoothTemplate" id="C29-Km-ecH">
+                        <connections>
+                            <action selector="zoomFit:" target="-2" id="xj4-Le-34E"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="3FDAA1D4-2CE3-408E-B1CD-9D667288D36D" label="Next Document" paletteLabel="Next Document" tag="-1" image="NSFontPanel" id="XVg-8J-Aap">
+                        <connections>
+                            <action selector="nextDocument:" target="-2" id="AY0-Y3-Sgg"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="66DC94A8-6FF8-4670-A5F8-ED17BD2DEB27" label="Previous Document" paletteLabel="Previous Document" tag="-1" image="NSApplicationIcon" id="hLg-kt-t54">
+                        <connections>
+                            <action selector="previousDocument:" target="-2" id="hlf-NF-pxT"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="B7520DBC-F9D9-4B8C-9610-1C476D275893" label="Search Document" paletteLabel="Search Document" id="eFb-Gt-iQg">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="96" height="22"/>
+                        <size key="maxSize" width="96" height="22"/>
+                        <searchField key="view" verticalHuggingPriority="750" id="JSw-ve-Nbe">
+                            <rect key="frame" x="3" y="14" width="96" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="raa-qe-UNZ">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                        </searchField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="os5-m6-h2c"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSeparatorItem" id="Y4t-6G-3sh"/>
+                    <toolbarItem implicitItemIdentifier="65D078CF-431B-414C-91AC-2ECCDA5E4EEA" label="Forward" paletteLabel="Forward" tag="-1" id="NIn-4s-wZO"/>
+                    <toolbarItem implicitItemIdentifier="94C196FD-70E5-4790-9C1B-5211BBE45667" label="Backward" paletteLabel="Backward" tag="-1" id="ezl-f4-WqU"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="eyf-ea-gfW"/>
+                    <toolbarItem reference="vvM-fw-G3i"/>
+                    <toolbarItem reference="C29-Km-ecH"/>
+                    <toolbarItem reference="Y4t-6G-3sh"/>
+                    <toolbarItem reference="XVg-8J-Aap"/>
+                    <toolbarItem reference="hLg-kt-t54"/>
+                    <toolbarItem reference="Y4t-6G-3sh"/>
+                    <toolbarItem reference="NIn-4s-wZO"/>
+                    <toolbarItem reference="ezl-f4-WqU"/>
+                    <toolbarItem reference="os5-m6-h2c"/>
+                    <toolbarItem reference="os5-m6-h2c"/>
+                    <toolbarItem reference="os5-m6-h2c"/>
+                    <toolbarItem reference="os5-m6-h2c"/>
+                    <toolbarItem reference="eFb-Gt-iQg"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
+            </connections>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="q7F-2O-IJN"/>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+        <image name="NSBluetoothTemplate" width="7" height="14"/>
+        <image name="NSFontPanel" width="32" height="32"/>
+    </resources>
+</document>

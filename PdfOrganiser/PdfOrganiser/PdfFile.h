@@ -22,16 +22,17 @@
 
 @interface PdfFile : NSObject {
     NSInteger *numberOfPage;
+    NSInteger currentPage;
 }
 
 @property (strong) NSURL *fileUrl;
 @property (strong) NSString *documentName;
 @property (strong) PDFDocument *document;
-@property (strong) PDFDestination *point;
+@property NSInteger currentPage;
 
 
 -(void)setFileWithUrl:(NSURL *) url;
-
+-(void)setCurrentPage:(NSInteger)current;
 
 
 @end

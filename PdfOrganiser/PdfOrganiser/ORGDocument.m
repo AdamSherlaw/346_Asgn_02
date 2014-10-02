@@ -12,25 +12,24 @@
 
 - (id)init
 {
-    
     self = [super init];
     if (self) {
         pdfSet = [[NSMutableArray alloc] init];
+        note = [[NSData alloc] init];
+        navigationManager = [[NSUndoManager alloc]init];
     }
-    NSLog(@"PDF Manager Document init");
     return self;
 }
 
 - (NSString *)windowNibName
 {
-    // Override returning the nib file name of the document
-    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
     return @"ORGDocument";
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     [super windowControllerDidLoadNib:aController];
+    
 }
 
 + (BOOL)autosavesInPlace
@@ -46,26 +45,21 @@
 }
 
 
-
+// Set the undo manager
 - (void)doubleClick:(SEL)aSelector
 {
     NSInteger rowNumber = [_setView clickedRow];
-    current = [pdfSet objectAtIndex: rowNumber];
+    currentPdf = [pdfSet objectAtIndex: rowNumber];
     
-    [_pdfView setDocument: [current document]];
-    [_pdfView goToDestination:[current point]];
+    [_pdfView setDocument: [currentPdf document]];
+    [_pdfView goToPage: [[currentPdf document] pageAtIndex:(NSUInteger)[currentPdf currentPage]]];
     
-    [self labelName:[current documentName]];
+    [self labelName:[currentPdf documentName]];
+    [self currentPageLabel:[NSString stringWithFormat:@"%ld", [[currentPdf document] indexForPage:[_pdfView currentPage]]]];
     indexOfCurrent = rowNumber;
-    
 }
 
 
--(void)labelName: (NSString *) value
-{
-    NSLog(@"HERE:    %@", value);
-    [_fileNameLabel setStringValue:value];
-}
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
@@ -82,39 +76,38 @@
     // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
     // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
     /*NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-    @throw exception;*/
+     @throw exception;*/
     return YES;
 }
+
 
 # pragma pdf tools
 
 - (IBAction)addPdf:(id)sender {
-    NSLog(@"addPdf Called");
-    // Show the open file window
-    // create an open documet panel
+    
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setAllowsMultipleSelection:YES];
     [panel setCanChooseDirectories:NO];
+    [panel setAllowedFileTypes:[NSArray arrayWithObject:@"pdf"]];
     
-    // display the panel
     [panel beginWithCompletionHandler:^(NSInteger result) {
         if (result == NSFileHandlingPanelOKButton) {
             for (NSURL *temp in [panel URLs]) {
                 
-            // A reference to what has been selected
                 NSURL *theDocument = temp;
                 
-                NSLog(@"Document URL: %@", theDocument);
-            
-            // Create a new pdfFile
                 PdfFile *file = [[PdfFile alloc] init];
-            
-            // Set its URL
-            [file setFileWithUrl: theDocument];
-            [file setDocumentName: [[theDocument URLByDeletingPathExtension] lastPathComponent]];
-            
-            // Add the pdf object to the array
-            [self insertObject:file inPdfSetAtIndex:[pdfSet count]];
+                [file setFileWithUrl: theDocument];
+                [file setDocumentName: [[theDocument URLByDeletingPathExtension] lastPathComponent]];
+                
+                [setController addObject: file];
+                
+                currentPdf = file;
+                [_pdfView setDocument:[file document]];
+                indexOfCurrent = [pdfSet count] - 1;
+                
+                [self labelName:[file documentName]];
+                [self currentPageLabel:[NSString stringWithFormat:@"%ld", [[currentPdf document] indexForPage:[_pdfView currentPage]]]];
             }
         }
     }];
@@ -123,52 +116,8 @@
 }
 
 
--(void)insertObject:(PdfFile *)p inPdfSetAtIndex:(NSUInteger)index
-{
-    NSLog(@"adding %@ to %@", p, pdfSet);
-    // Add the inverse to the undo stack
-    NSUndoManager *undo = [self undoManager];
-    [[undo prepareWithInvocationTarget:self] removeObjectFromPdfSetAtIndex:index];
-     
-     // If not the undo manager
-     if(![undo isUndoing]) {
-     [undo setActionName:@"Add PDF"];
-     }
-    
-    // Add the pdf to the array
-    //[self startObservingPerson:p];
-    [pdfSet insertObject:p atIndex:index];
-}
-
--(void)removeObjectFromPdfSetAtIndex:(NSUInteger)index
-{
-    PdfFile *p = [pdfSet objectAtIndex:index];
-    NSLog(@"removing %@ from %@", p, pdfSet);
-    
-    // Add the inverse of the operation to the undo stack
-    NSUndoManager *undo = [self undoManager];
-     [[undo prepareWithInvocationTarget:self] insertObject:p inPdfSetAtIndex:index];
-     
-     // If not the undo manager
-     if (![undo isUndoing]) {
-     [undo setActionName:@"Remove PDF"];
-     }
-    
-    //[self stopObservingPerson:p];
-    [pdfSet removeObjectAtIndex:index];
-}
-
-
 - (NSString *)displayName {
-    if (![self fileURL]) {
-        if ([current documentName]) {
-            NSLog(@"In if %@", [current documentName]);
-            return @"here";
-        } else {
-            return @"PDF Set Viewer";
-        }
-    }
-    NSLog(@"Out if");
+    if (![self fileURL]) return @"PDF Set Viewer";
     return [super displayName];
 }
 
@@ -177,63 +126,152 @@
 {
     [_pdfView zoomIn:sender];
 }
+
+
 -(IBAction)zoomOut:(id)sender
 {
     [_pdfView zoomOut:sender];
 }
 
--(IBAction)nextPage:(id)sender
-{
-    [_pdfView goToNextPage:sender];
-    [current setPoint: [_pdfView currentDestination]];
-}
-
--(IBAction)previousPage:(id)sender
-{
-    [_pdfView goToPreviousPage:sender];
-    [current setPoint: [_pdfView currentDestination]];
-}
 
 -(IBAction)zoomFit:(id)sender
 {
     [_pdfView setAutoScales:YES];
 }
 
--(IBAction)goToPage:(NSInteger)page
+
+-(IBAction)nextPage:(id)sender
 {
-    //[_pdfView goToPage:<#(PDFPage *)#>];
+    [_pdfView goToNextPage:sender];
+    
+    [currentPdf setCurrentPage:[[currentPdf document] indexForPage:[_pdfView currentPage]]];
+    
+    [self currentPageLabel:[NSString stringWithFormat:@"%ld", [[currentPdf document] indexForPage:[_pdfView currentPage]]]];
+    
+    [[navigationManager prepareWithInvocationTarget:self] previousPage:sender];
 }
 
-// Check for the end of the array....
+
+-(IBAction)previousPage:(id)sender
+{
+    [_pdfView goToPreviousPage:sender];
+    
+    [currentPdf setCurrentPage:[[currentPdf document] indexForPage:[_pdfView currentPage]]];
+    
+    [self currentPageLabel:[NSString stringWithFormat:@"%ld", [[currentPdf document] indexForPage:[_pdfView currentPage]]]];
+    
+    [[navigationManager prepareWithInvocationTarget:self] nextPage:sender];
+}
+
+
+
 -(IBAction)nextDocument:(id)sender
 {
-    if (indexOfCurrent +1 < [pdfSet count]) {
-        //NSLog(@"%ld", ++indexOfCurrent);
-        current = [pdfSet objectAtIndex: ++indexOfCurrent];
+    if (indexOfCurrent + 1 < [pdfSet count]) {
+        currentPdf = [pdfSet objectAtIndex: ++indexOfCurrent];
     
-        [_pdfView setDocument: [current document]];
-        [self labelName:[current documentName]];
+        [_pdfView setDocument: [currentPdf document]];
+        [self labelName:[currentPdf documentName]];
         
-        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:indexOfCurrent];
-        [_setView selectRowIndexes:indexSet byExtendingSelection:NO];
+        [_pdfView goToPage: [[currentPdf document] pageAtIndex:(NSUInteger)[currentPdf currentPage]]];
+        
+        [self currentPageLabel:[NSString stringWithFormat:@"%lu", (NSUInteger)[currentPdf currentPage]]];
+        
+        [_setView selectRowIndexes:[NSIndexSet indexSetWithIndex:indexOfCurrent] byExtendingSelection:NO];
+        
+        [[navigationManager prepareWithInvocationTarget:self] previousDocument:sender];
     }
 }
 
-// Check for the beginning of the array
+
 -(IBAction)previousDocument:(id)sender
 {
     if (indexOfCurrent - 1 >= 0) {
-        //NSLog(@"%ld", --indexOfCurrent);
-        
-        current = [pdfSet objectAtIndex: --indexOfCurrent];
+        currentPdf = [pdfSet objectAtIndex: --indexOfCurrent];
     
-        [_pdfView setDocument: [current document]];
-        [self labelName:[current documentName]];
+        [_pdfView setDocument: [currentPdf document]];
+        [self labelName:[currentPdf documentName]];
         
-        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:indexOfCurrent];
-        [_setView selectRowIndexes:indexSet byExtendingSelection:NO];
+        [_pdfView goToPage: [[currentPdf document] pageAtIndex:(NSUInteger)[currentPdf currentPage]]];
+        [self currentPageLabel:[NSString stringWithFormat:@"%lu", (NSUInteger)[currentPdf currentPage]]];
+    
+        [_setView selectRowIndexes:[NSIndexSet indexSetWithIndex:indexOfCurrent] byExtendingSelection:NO];
+        
+        [[navigationManager prepareWithInvocationTarget:self] nextDocument:sender];
     }
 }
+
+
+-(IBAction)back:(id)sender
+{
+    [navigationManager undo];
+}
+
+
+-(IBAction)forward:(id)sender
+{
+    [navigationManager redo];
+}
+
+
+-(void)labelName: (NSString *) value
+{
+    [_fileNameLabel setStringValue:value];
+}
+
+
+-(void)currentPageLabel:(NSString *)value
+{
+    [_currentPageLabel setStringValue:value];
+}
+
+
+
+-(IBAction)loadNote:(id)sender
+{
+    // Menu to open an application specific file that corresponds to a note
+    // object. - Using the application extension.
+    
+    
+}
+
+
+-(IBAction)newNote:(id)sender
+{
+    // Show a new note window
+    
+    // Create a new note object
+    currentNote = [[Note alloc] init];
+}
+
+
+-(IBAction)saveNote:(id)sender
+{
+    // Set the text into the data buffer
+    // Archive the object?
+    
+    [currentNote setNoteData:[[_noteView string] dataUsingEncoding:NSUTF8StringEncoding]];
+    [currentNote saveNote];
+    
+    // Hide the note window
+}
+
+
+-(IBAction)changePage:(id)sender
+{
+     [self moveToPage:[_pageJump integerValue]];
+}
+
+
+-(void)moveToPage:(NSInteger)page
+{
+    [[navigationManager prepareWithInvocationTarget:self] moveToPage:[[currentPdf document] indexForPage:[_pdfView currentPage]]];
+    if (![navigationManager isUndoing]) [navigationManager setActionName:@"Previous Jump"];
+    
+    [_pdfView goToPage: [[currentPdf document] pageAtIndex:(NSUInteger)page]];
+    [self currentPageLabel:[NSString stringWithFormat:@"%ld", page]];
+}
+
 
 
 @end

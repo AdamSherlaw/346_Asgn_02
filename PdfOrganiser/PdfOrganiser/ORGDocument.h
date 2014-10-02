@@ -9,18 +9,26 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 #import "PdfFile.h"
+#import "Note.h"
 
 
 @interface ORGDocument : NSDocument {
     IBOutlet NSArrayController *setController;
-    PdfFile *current;
+    PdfFile *currentPdf;
+    Note *currentNote;
     NSMutableArray *pdfSet;
     NSInteger indexOfCurrent;
+    NSData *note;
+    NSUndoManager *navigationManager;
 }
 
 @property (strong) IBOutlet PDFView *pdfView;
 @property (strong) IBOutlet NSTableView *setView;
 @property (weak) IBOutlet NSTextField *fileNameLabel;
+@property (weak) IBOutlet NSTextField *currentPageLabel;
+@property (strong) IBOutlet NSTextView *noteView;
+@property (weak) IBOutlet NSTextField *pageJump;
+
 
 
 - (IBAction)addPdf:(id)sender;
@@ -30,9 +38,6 @@
 -(IBAction)nextPage:(id)sender;
 -(IBAction)previousPage:(id)sender;
 -(IBAction)zoomFit:(id)sender;
-
--(void)insertObject:(PdfFile *)p inPdfSetAtIndex:(NSUInteger)index;
--(void)removeObjectFromPdfSetAtIndex:(NSUInteger)index;
 
 -(void)labelName: (NSString *) value;
 

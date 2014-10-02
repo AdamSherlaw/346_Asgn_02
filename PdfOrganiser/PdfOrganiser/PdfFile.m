@@ -9,21 +9,30 @@
 #import "PdfFile.h"
 
 @implementation PdfFile
-@synthesize fileUrl, documentName, document, point;
+@synthesize fileUrl, documentName, document, currentPage;
 
 - (id)init
 {
-    NSLog(@"PDF File init");
     self = [super init];
     if (self) {
         fileUrl = nil;
         numberOfPage = 0;
         documentName = @"No name";
         document = nil;
+        currentPage = 0;
     }
     return self;
 }
 
+/*-(void)setCurrentPage:(NSUInteger *)current
+{
+    currentPage = current;
+}
+
+-(NSInteger)getCurrentPage
+{
+    return currentPage;
+}*/
 
 /* Set the file url */
 -(void)setFileWithUrl:(NSURL *) url

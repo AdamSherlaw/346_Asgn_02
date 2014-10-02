@@ -18,6 +18,7 @@
     if (self) {
         pdfLocation = nil;
         noteLocation = nil;
+        noteData = @"Adam is cool";
     }
     return self;
 }
@@ -37,6 +38,6 @@
 {
     // Save the note
     // Save the object or save the data??? Both maybe???
-    [noteData writeToFile:@"/Users/Adam/Desktop/test" atomically:YES];
+    //[noteData writeToFile:@"/Users/Adam/Desktop/test" atomically:YES];
 }
 @end

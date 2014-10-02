@@ -12,10 +12,10 @@
 @interface Note : NSObject {
     NSURL *pdfLocation;      // Associated pdf file location
     NSURL *noteLocation;     // Location of stored note plain text.
-    NSData *noteData;        // Note Data
+                             //NSString *noteData;        // Note Data string
 }
 
-@property (strong) NSData *noteData;
+@property (weak) NSString *noteData;
 
 -(void) saveNote;
 

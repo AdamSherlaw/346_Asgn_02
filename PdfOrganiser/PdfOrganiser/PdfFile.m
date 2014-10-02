@@ -16,7 +16,6 @@
     self = [super init];
     if (self) {
         fileUrl = nil;
-        numberOfPage = 0;
         documentName = @"No name";
         document = nil;
         currentPage = 0;

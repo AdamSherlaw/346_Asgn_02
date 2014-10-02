@@ -21,7 +21,6 @@
 #import <Quartz/Quartz.h>
 
 @interface PdfFile : NSObject {
-    NSInteger *numberOfPage;
     NSInteger currentPage;
 }
 

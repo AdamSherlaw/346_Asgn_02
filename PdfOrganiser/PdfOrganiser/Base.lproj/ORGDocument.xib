@@ -13,6 +13,7 @@
                 <outlet property="noteView" destination="AJb-eT-PD0" id="Pqh-rT-kVg"/>
                 <outlet property="pageJump" destination="Kys-p9-r0p" id="wMz-QU-cHR"/>
                 <outlet property="pdfView" destination="iav-Vx-z3h" id="bIT-su-1Mf"/>
+                <outlet property="searchField" destination="raa-qe-UNZ" id="YXP-M3-5Gu"/>
                 <outlet property="setController" destination="f8q-ds-tJc" id="hqq-XM-WJj"/>
                 <outlet property="setView" destination="49e-1e-QLn" id="sgV-bc-mEs"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
@@ -239,6 +240,9 @@
                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </searchFieldCell>
+                            <connections>
+                                <action selector="searchField:" target="-2" id="xLb-z2-nM2"/>
+                            </connections>
                         </searchField>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="os5-m6-h2c"/>
@@ -253,12 +257,6 @@
                             <action selector="back:" target="-2" id="mIh-9Q-MDj"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="A4E93FB2-E12D-4662-B371-30067360437A" label="New Note" paletteLabel="New Note" tag="-1" image="NSMultipleDocuments" id="zcz-kg-jv9">
-                        <connections>
-                            <action selector="newNote:" target="-2" id="jlV-Qb-JwY"/>
-                        </connections>
-                    </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="4BBFC1EF-9E07-4E69-93FD-10D7C7797394" label="Go to " paletteLabel="Go to " tag="-1" image="NSCaution" id="Zwo-db-35Z"/>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="eyf-ea-gfW"/>
@@ -271,7 +269,6 @@
                     <toolbarItem reference="ezl-f4-WqU"/>
                     <toolbarItem reference="NIn-4s-wZO"/>
                     <toolbarItem reference="Y4t-6G-3sh"/>
-                    <toolbarItem reference="zcz-kg-jv9"/>
                     <toolbarItem reference="os5-m6-h2c"/>
                     <toolbarItem reference="os5-m6-h2c"/>
                     <toolbarItem reference="os5-m6-h2c"/>
@@ -340,9 +337,7 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="8" height="8"/>
-        <image name="NSCaution" width="32" height="32"/>
         <image name="NSGoLeftTemplate" width="9" height="9"/>
         <image name="NSGoRightTemplate" width="9" height="9"/>
-        <image name="NSMultipleDocuments" width="32" height="32"/>
     </resources>
 </document>

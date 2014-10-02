@@ -14,12 +14,17 @@
 
 @interface ORGDocument : NSDocument {
     IBOutlet NSArrayController *setController;
-    PdfFile *currentPdf;
-    Note *currentNote;
     NSMutableArray *pdfSet;
+    
+    NSMutableArray *noteSet;
+    PdfFile *currentPdf;
     NSInteger indexOfCurrent;
+    Note *currentNote;
     NSData *note;
+    
     NSUndoManager *navigationManager;
+    
+    PDFSelection *queryResult;
 }
 
 @property (strong) IBOutlet PDFView *pdfView;
@@ -28,6 +33,8 @@
 @property (weak) IBOutlet NSTextField *currentPageLabel;
 @property (strong) IBOutlet NSTextView *noteView;
 @property (weak) IBOutlet NSTextField *pageJump;
+@property (weak) IBOutlet NSSearchFieldCell *searchField;
+
 
 
 

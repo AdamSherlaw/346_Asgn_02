@@ -13,10 +13,14 @@
     NSURL *pdfLocation;      // Associated pdf file location
     NSURL *noteLocation;     // Location of stored note plain text.
                              //NSString *noteData;        // Note Data string
+    NSString *noteData;
+    
 }
 
-@property (weak) NSString *noteData;
+@property (strong) NSString *noteData;
 
 -(void) saveNote;
+-(void)writeNote:(NSString *)data;
+-(NSString *)getData;
 
 @end

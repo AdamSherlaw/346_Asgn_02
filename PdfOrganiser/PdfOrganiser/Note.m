@@ -23,7 +23,17 @@
     return self;
 }
 
+-(void)writeNote:(NSString *)data{
+    NSLog(@"Data saved: %@", data);
+    noteData = data;
+}
 
+-(NSString *)getData
+{
+    NSLog(@"Data retrieved: %@", noteData);
+    return noteData;
+}
+    
 - (id)initWithPdfUrl:(NSURL *)pdfUrl andNoteUrl:(NSURL *)noteUrl
 {
     self = [super init];

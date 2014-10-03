@@ -21,7 +21,6 @@
 		660ECDEB19DA8E8C00A3D0DD /* PdfOrganiserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 660ECDEA19DA8E8C00A3D0DD /* PdfOrganiserTests.m */; };
 		660ECDF619DA8F9000A3D0DD /* PdfFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 660ECDF519DA8F9000A3D0DD /* PdfFile.m */; };
 		660ECDF819DA929E00A3D0DD /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660ECDF719DA929E00A3D0DD /* Quartz.framework */; };
-		664CD05419DCAC5F00192834 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 664CD05319DCAC5F00192834 /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +57,6 @@
 		660ECDF419DA8F9000A3D0DD /* PdfFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfFile.h; sourceTree = "<group>"; };
 		660ECDF519DA8F9000A3D0DD /* PdfFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfFile.m; sourceTree = "<group>"; };
 		660ECDF719DA929E00A3D0DD /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
-		664CD05219DCAC5F00192834 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		664CD05319DCAC5F00192834 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +124,6 @@
 		660ECDC319DA8E8C00A3D0DD /* PdfOrganiser */ = {
 			isa = PBXGroup;
 			children = (
-				664CD05219DCAC5F00192834 /* Note.h */,
-				664CD05319DCAC5F00192834 /* Note.m */,
 				660ECDF419DA8F9000A3D0DD /* PdfFile.h */,
 				660ECDF519DA8F9000A3D0DD /* PdfFile.m */,
 				660ECDCF19DA8E8C00A3D0DD /* ORGDocument.h */,
@@ -274,7 +269,6 @@
 				660ECDF619DA8F9000A3D0DD /* PdfFile.m in Sources */,
 				660ECDCA19DA8E8C00A3D0DD /* main.m in Sources */,
 				660ECDD119DA8E8C00A3D0DD /* ORGDocument.m in Sources */,
-				664CD05419DCAC5F00192834 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

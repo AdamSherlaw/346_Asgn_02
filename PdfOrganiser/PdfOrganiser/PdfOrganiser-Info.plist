@@ -29,6 +29,10 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>UIStatusBarStyle</key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>as.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>

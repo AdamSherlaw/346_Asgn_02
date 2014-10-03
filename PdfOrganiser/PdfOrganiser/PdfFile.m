@@ -1,9 +1,9 @@
 //
 //  PdfFile.m
-//  MyPdfViewer
+//  PdfOrganiser
 //
-//  Created by Adam Sherlaw on 29/09/14.
-//  Copyright (c) 2014 Adam Sherlaw. All rights reserved.
+//  COSC346 Assignment 02
+//  Adam Sherlaw 1935911
 //
 
 #import "PdfFile.h"
@@ -16,32 +16,20 @@
     self = [super init];
     if (self) {
         fileUrl = nil;
-        documentName = @"No name";
+        documentName = @"unnamed";
         document = nil;
         currentPage = 0;
     }
     return self;
 }
 
-/*-(void)setCurrentPage:(NSUInteger *)current
-{
-    currentPage = current;
-}
-
--(NSInteger)getCurrentPage
-{
-    return currentPage;
-}*/
-
-/* Set the file url */
+/* 
+ *  Set the file url to the URL given
+ */
 -(void)setFileWithUrl:(NSURL *) url
 {
     fileUrl = url;
     document = [[PDFDocument alloc] initWithURL:url];
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat: @"%@", [[fileUrl URLByDeletingPathExtension] lastPathComponent]];
 }
 
 @end

@@ -1,20 +1,12 @@
 //
 //  PdfFile.h
-//  MyPdfViewer
+//  PdfOrganiser
 //
-//  Created by Adam Sherlaw on 29/09/14.
-//  Copyright (c) 2014 Adam Sherlaw. All rights reserved.
+//  COSC346 Assignment 02
+//  Adam Sherlaw 1935911
 //
-//  This file will be used to reference a PDF document
-//
-//  On PDF open, a new instance of PdfFile should be created and
-//  initailised
-//
-//  File URL - Where to find the file
-//  Associated data that relates to the file
-//       Number of pages in document
-//       Current / last viewed page
-//
+//  PDF File contains a URL to a pdf document along with the document's name,
+//  documents current page and the document object itself.
 //
 
 #import <Foundation/Foundation.h>
@@ -31,7 +23,7 @@
 
 
 -(void)setFileWithUrl:(NSURL *) url;
--(void)setCurrentPage:(NSInteger)current;
+
 
 
 @end
